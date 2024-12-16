@@ -1,0 +1,84 @@
+  body {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    form {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)); /* Gradasi transparan */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 15px;
+        color: white; /* Warna putih agar kontras */
+    }
+
+    label {
+        font-weight: bold;
+        color: white; /* Warna putih untuk kontras */
+        margin-bottom: 5px;
+        display: block;
+        font-size: 0.9rem;
+    }
+
+    input[type="text"], input[type="date"], textarea, input[type="file"] {
+        width: 100%;
+        padding: 7px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.5); /* Warna border lebih lembut */
+        font-size: 0.9rem;
+        background-color: rgba(255, 255, 255, 0.8); /* Latar belakang input semi-transparan */
+        color: #333; /* Warna teks gelap */
+    }
+
+    textarea {
+        resize: none;
+        height: 70px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 9px;
+        border: none;
+        border-radius: 15px;
+        width: 100%;
+        font-size: 0.95rem;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .btn-back {
+        background-color: #6f42c1;
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 9px;
+        border-radius: 15px;
+        color: white;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #5a2d91;
+    }
+

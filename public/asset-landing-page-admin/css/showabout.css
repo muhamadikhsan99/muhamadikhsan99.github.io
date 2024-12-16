@@ -1,0 +1,133 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradasi biru tua */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f4f4f4;
+}
+
+.card-container {
+    background: linear-gradient(135deg, #243B55, #141E30); /* Gradasi biru gelap */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    background: linear-gradient(45deg, #1b2735, #38495e); /* Gradasi biru gelap */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card-body {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-section {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    animation: fadeIn 1.8s ease-out;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    animation: zoomIn 1s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.detail-section {
+    flex: 2;
+    margin-left: 30px;
+    animation: fadeInDetails 2s ease-in-out;
+}
+
+@keyframes fadeInDetails {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.detail-section p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #b0bec5; /* Teks abu-abu terang */
+    animation: fadeInText 2s ease-out;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1c2834, #2a3a4e); /* Gradasi biru tua */
+    border-top: 1px solid #3a3a3a;
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); /* Gradasi biru tua */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.card-footer a:hover {
+    background: linear-gradient(45deg, #09203f, #537895); /* Hover lebih terang */
+    transform: scale(1.05);
+}

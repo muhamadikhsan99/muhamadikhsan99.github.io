@@ -1,0 +1,955 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/* Gaya Teks Saya Ican */
+.saya-ican-text {
+  font-size: 3rem; /* Ukuran teks lebih besar */
+  font-weight: 700; /* Teks lebih tebal */
+  background: linear-gradient(90deg, #ffffff, #00e5ff, #ffffff, #ff00ff); /* Gradasi warna putih dominan */
+  -webkit-background-clip: text; /* Menampilkan gradien hanya pada teks */
+  -webkit-text-fill-color: transparent; /* Menyembunyikan warna solid */
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(0, 229, 255, 0.7),
+    0 0 25px rgba(255, 0, 255, 0.7),
+    0 0 30px rgba(0, 229, 255, 0.5),
+    0 0 40px rgba(255, 0, 255, 0.5);
+  animation: neonPulseWhite 2s ease-in-out infinite alternate; /* Animasi neon gradien putih */
+  margin-top: -150px; /* Geser lebih jauh ke atas */
+  margin-left: 150px; /* Geser ke kanan */
+  padding: 25px 0; /* Padding atas dan bawah */
+  text-align: left; /* Teks rata kiri */
+  letter-spacing: 0; /* Hapus jarak antar huruf */
+  word-spacing: 0; /* Hapus jarak antar kata */
+}
+
+/* Animasi Neon Dominasi Putih */
+@keyframes neonPulseWhite {
+  0% {
+    text-shadow: 
+      0 0 20px #ffffff,
+      0 0 40px #ffffff,
+      0 0 60px #00e5ff,
+      0 0 80px #ff00ff,
+      0 0 100px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px #ffffff,
+      0 0 60px #00e5ff,
+      0 0 90px #ffffff,
+      0 0 110px rgba(255, 255, 255, 0.8),
+      0 0 130px rgba(255, 0, 255, 0.7);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px #ffffff,
+      0 0 50px #ffffff,
+      0 0 70px #ff00ff,
+      0 0 100px rgba(255, 255, 255, 0.7),
+      0 0 120px rgba(0, 229, 255, 0.5);
+  }
+}
+
+/* Kontainer Informasi Kontak */
+.contact-info-container {
+  display: flex;
+  flex-direction: row; /* Baris horizontal */
+  justify-content: center; /* Item di tengah */
+  align-items: center; /* Ikon dan teks rata tengah */
+  gap: 20px; /* Jarak antar item */
+  position: absolute;
+  bottom: 0; /* Di bawah */
+  left: 50%;
+  transform: translateX(-50%); /* Posisi tengah */
+  width: 100%;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6); /* Latar transparan */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Bayangan untuk menonjolkan */
+}
+
+/* Item Kontak */
+.contact-item {
+  display: flex;
+  align-items: center; /* Ikon dan teks rata vertikal */
+  gap: 8px; /* Jarak antara ikon dan teks */
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b, #00ffff); /* Gradien warna */
+  -webkit-background-clip: text;
+  color: transparent; /* Warna solid disembunyikan */
+  padding: 5px;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Efek saat hover */
+}
+
+/* Efek Hover Ikon Kontak */
+.contact-item i:hover {
+  transform: scale(1.2);
+  text-shadow: 
+    0 0 8px #ff416c,
+    0 0 15px #ff416c,
+    0 0 20px #ff4b2b,
+    0 0 25px #00ffff,
+    0 0 30px #00ffff;
+  animation: glow 1.5s ease-in-out infinite alternate; /* Animasi glow */
+}
+
+/* Animasi Glow */
+@keyframes glow {
+  0% {
+    text-shadow: 
+      0 0 8px #ff416c,
+      0 0 15px #ff416c,
+      0 0 20px #ff4b2b,
+      0 0 25px #00ffff,
+      0 0 30px #00ffff;
+  }
+  50% {
+    text-shadow: 
+      0 0 20px #ff416c,
+      0 0 30px #ff416c,
+      0 0 40px #ff4b2b,
+      0 0 50px #00ffff,
+      0 0 60px #00ffff;
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #ff416c,
+      0 0 20px #ff416c,
+      0 0 30px #ff4b2b,
+      0 0 40px #00ffff,
+      0 0 50px #00ffff;
+  }
+}
+
+/* Ikon Sosial Media */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Jarak antar ikon */
+  padding: 20px 0;
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none; /* Hilangkan underline */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #00ffff; /* Warna saat hover */
+}
+
+
+
+/* Mengatur ikon sosial media */
+.social-icons a {
+  font-size: 2rem; /* Ukuran ikon */
+  color: #fff; /* Warna ikon default (putih) */
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Animasi perubahan */
+}
+
+/* Warna khusus untuk masing-masing ikon sosial media */
+.social-icons .fab.fa-facebook {
+  color: #3b5998; /* Warna biru khas Facebook */
+}
+
+.social-icons .fab.fa-twitter {
+  color: #1da1f2; /* Warna biru khas Twitter */
+}
+
+.social-icons .fab.fa-linkedin {
+  color: #0077b5; /* Warna biru khas LinkedIn */
+}
+
+.social-icons .fab.fa-github {
+  color: #333; /* Warna gelap khas GitHub */
+}
+
+/* Efek hover: Mengubah warna dan membesarkan ikon */
+.social-icons a:hover {
+  transform: scale(1.2); /* Membuat ikon lebih besar */
+  color: #fff; /* Memastikan ikon tetap berwarna putih */
+  text-shadow: 0 0 8px #fff, 0 0 12px #fff, 0 0 20px #ff66cc, 0 0 30px #ff66cc, 0 0 40px #ff66cc; /* Efek glow */
+}
+
+/* Warna lebih terang saat hover untuk masing-masing ikon */
+.social-icons a:hover .fab.fa-facebook {
+  color: #4267b2; /* Warna terang saat hover untuk Facebook */
+  text-shadow: 0 0 8px #fff, 0 0 12px #4267b2, 0 0 20px #4267b2; /* Efek glow biru */
+}
+
+.social-icons a:hover .fab.fa-twitter {
+  color: #1a91da; /* Warna terang saat hover untuk Twitter */
+  text-shadow: 0 0 8px #fff, 0 0 12px #1da1f2, 0 0 20px #1da1f2; /* Efek glow biru terang */
+}
+
+.social-icons a:hover .fab.fa-linkedin {
+  color: #006699; /* Warna terang saat hover untuk LinkedIn */
+  text-shadow: 0 0 8px #fff, 0 0 12px #0077b5, 0 0 20px #0077b5; /* Efek glow biru */
+}
+
+.social-icons a:hover .fab.fa-github {
+  color: #444; /* Warna terang saat hover untuk GitHub */
+  text-shadow: 0 0 8px #fff, 0 0 12px #444, 0 0 20px #444; /* Efek glow abu-abu */
+}
+
+
+
+
+#about {
+  padding: 100px 20px;
+  background: linear-gradient(45deg, #3a7bd5, #ff6ec7); /* Gradasi warna keren */
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#about .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  animation: fadeInUp 2s ease-out;
+}
+
+.about-description {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 2s ease-out;
+}
+
+.about-details h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.skills-list {
+  list-style-type: none;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  margin: 10px 0;
+}
+
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  width: 250px;  /* Ukuran lingkaran gambar */
+  height: 250px;
+  border-radius: 50%;  /* Membuat gambar berbentuk lingkaran */
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.4), rgba(58, 123, 213, 0.4)); /* Gradasi lembut di luar gambar */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);  /* Bayangan lembut di sekitar gambar */
+  animation: pulseBorder 2s infinite ease-in-out; /* Animasi border yang berdenyut */
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Memastikan gambar terpotong dengan rapi */
+  border-radius: 50%;
+}
+
+@keyframes pulseBorder {
+  0% {
+    border: 5px solid rgba(255, 105, 180, 0.8);  /* Warna border awal */
+    transform: scale(1);
+  }
+  50% {
+    border: 8px solid rgba(58, 123, 213, 0.8);  /* Warna border berubah */
+    transform: scale(1.05);  /* Sedikit membesar */
+  }
+  100% {
+    border: 5px solid rgba(255, 105, 180, 0.8);  /* Warna border kembali ke warna awal */
+    transform: scale(1);  /* Kembali ke ukuran normal */
+  }
+}
+
+
+
+#certificate {
+  padding: 100px 20px;
+  background: linear-gradient(45deg, #2196f3, #ff4081); /* Gradasi warna keren */
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#certificate .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.certificate-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  animation: fadeInUp 2s ease-out;
+}
+
+.certificate-description {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 2s ease-out;
+}
+
+.certificate-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.certificate-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.certificate-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.certificate-date {
+  font-size: 1.1rem;
+  color: #f1f1f1;
+}
+
+/* Animasi Fade In untuk Teks */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .certificate-title {
+      font-size: 2.5rem;
+  }
+
+  .certificate-description {
+      font-size: 1.2rem;
+  }
+
+  .certificate-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .certificate-card {
+      width: 90%;
+      margin-bottom: 20px;
+  }
+}
+
+/* Section Projects */
+#projects {
+  background: linear-gradient(135deg, #00a8ff, #ff7f50, #9b59b6); /* Gradasi biru-oranye-ungu */
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite; /* Gerakan latar */
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animasi Gradient */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Efek Cahaya Dinamis */
+#projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 70%);
+  background-size: 20% 20%;
+  opacity: 0.7;
+  animation: lightEffect 15s ease infinite;
+  z-index: -1; /* Letakkan di belakang konten */
+}
+
+/* Animasi Efek Cahaya */
+@keyframes lightEffect {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5) translateX(30px) translateY(-30px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) translateX(0) translateY(0);
+    opacity: 0.5;
+  }
+}
+
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-info {
+  padding: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.project-card:hover .project-info {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.project-link {
+  font-size: 1.2rem;
+  color: #00a8ff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #00a8ff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #00a8ff;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-link {
+    font-size: 1rem;
+  }
+}
+
+body {
+  background: linear-gradient(120deg, #ff7675, #74b9ff, #55efc4);
+  background-size: 300% 300%;
+  animation: gradientBackground 12s ease infinite;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Animasi Gradasi Background */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Section Style */
+#skills {
+  background: linear-gradient(135deg, #283c86, #45a247);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Skill Card */
+.skill-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Skill Icon */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animasi Glow untuk Icon */
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  }
+  100% {
+      text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
+  }
+}
+
+/* Skill Title */
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Skill Description */
+.skill-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+/* Contact Section Full-Page */
+#contact {
+  background: linear-gradient(135deg, #0083b0, #00b4db, #ff8c42); /* Gradasi biru ke oranye */
+  color: #fff;
+  height: 100vh; /* Tinggi layar penuh */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Pusatkan konten secara vertikal */
+  align-items: center; /* Pusatkan konten secara horizontal */
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Animasi Efek Background Bergerak */
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 136, 0, 0.3)); /* Efek transparan */
+  animation: moveBackground 10s linear infinite; /* Animasi bergerak */
+  z-index: -1; /* Membuat efek latar berada di belakang konten */
+}
+
+/* Animasi Gerakan Background */
+@keyframes moveBackground {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(50%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Description */
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #f0f0f0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Form */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 131, 176, 0.8);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(135deg, #ff5722, #ff9800); /* Gradasi oranye */
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #ff9800, #ff5722); /* Gradasi terbalik */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.8);
+}
+
+/* Contact Info */
+.contact-info {
+  font-size: 1rem;
+  margin-top: 30px;
+  line-height: 2;
+}
+
+.contact-info i {
+  color: #ff5722;
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #0f1b27, #162c47); /* Gradasi gelap dengan sedikit biru */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Animasi Background Bergerak */
+@keyframes moveFooterBackground {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(100%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Footer Text */
+footer h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Efek bayangan */
+}
+
+/* Social Media Icons */
+footer .social-icons {
+  margin: 20px 0;
+}
+
+footer .social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #ff4081; /* Warna saat hover */
+  transform: scale(1.2);
+}
+
+/* Footer Links */
+footer .footer-links {
+  margin: 20px 0;
+}
+
+footer .footer-links a {
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+  color: #ff4081; /* Warna saat hover */
+}
+
+/* Small Text */
+footer .small-text {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 20px;
+  }
+
+  footer h3 {
+    font-size: 1.5rem;
+  }
+
+  footer .footer-links a {
+    font-size: 1rem;
+  }
+
+  footer .social-icons a {
+    font-size: 1.2rem;
+  }
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  color: #333; /* Warna teks default */
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/* Beri jarak antara ikon dan teks */
+ul li a i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Warna khusus untuk setiap ikon */
+ul li:nth-child(1) a i {
+  color: #3498db; /* Biru untuk Home */
+}
+
+ul li:nth-child(2) a i {
+  color: #e74c3c; /* Merah untuk About */
+}
+
+ul li:nth-child(3) a i {
+  color: #f1c40f; /* Kuning untuk Certificate */
+}
+
+ul li:nth-child(4) a i {
+  color: #8e44ad; /* Ungu untuk Project */
+}
+
+ul li:nth-child(5) a i {
+  color: #2ecc71; /* Hijau untuk Skill */
+}
+
+ul li:nth-child(6) a i {
+  color: #e67e22; /* Oranye untuk Contact */
+}
+
+/* Efek hover untuk ikon */
+ul li a:hover i {
+  transform: scale(1.2); /* Membesarkan ikon */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+.cta-button {
+  background: linear-gradient(45deg, #ff00ff, #00ffff); /* Gradien warna tombol */
+  color: white;
+  font-size: 1.5rem; /* Ukuran teks lebih besar */
+  padding: 15px 30px; /* Padding lebih besar */
+  border: none;
+  border-radius: 35px; /* Sudut tombol lebih membulat */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transisi lebih halus */
+  margin-left: 80px; /* Geser ke kanan */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan ringan untuk kedalaman awal */
+}
+
+.cta-button:hover {
+  transform: scale(1.1); /* Membesarkan tombol saat hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Bayangan lebih dalam saat hover */
+              0 0 20px #ff00ff, 0 0 30px #00ffff; /* Efek neon yang lebih jelas */
+  background: linear-gradient(45deg, #ff007f, #00b3b3); /* Perubahan warna gradien lebih terang saat hover */
+  transition: all 0.3s ease-in-out; /* Perubahan yang lebih halus */
+}
+
+
+
+
+
+

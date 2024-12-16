@@ -1,0 +1,38 @@
+use App\Models\About;
+use App\Models\Certificate;
+use App\Models\Contact;
+use App\Models\Home;
+use App\Models\Project;
+use App\Models\Skill;
+
+
+public function index()
+{
+    // Mengambil semua data Home
+    $home = Home::all();
+    
+    // Mengambil data pertama dari model About (atau bisa menggunakan About::first() atau sesuai kebutuhan)
+    $about = About::all();
+    
+    $skill = Skill::all(); // Misalnya mengambil data pertama tentang diri
+
+    $contact = Contact::all(); 
+    // Mengirimkan data home dan about ke view
+    return view('home', compact('home', 'about', 'skill', 'contact', )); 
+
+
+
+    // Menambahkan warna pada setiap skill berdasarkan urutan
+    $skill->each(function ($skill, $index) use ($colors) {
+        $skill->colorClass = $colors[$index % count($colors)]; // Pilih warna sesuai index
+    });
+
+
+    // Daftar warna yang bisa digunakan untuk card
+    $colors = [
+        'from-indigo-500 to-purple-600',
+        'from-blue-500 to-green-500',
+        'from-red-500 to-yellow-500',
+        'from-pink-500 to-orange-500',
+        'from-teal-500 to-blue-500',
+    ];

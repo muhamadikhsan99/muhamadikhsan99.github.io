@@ -1,0 +1,186 @@
+/* Style untuk body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Animasi gradasi background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Container utama */
+.welcome-container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #66fcf1, #45a29e); /* Warna gradasi teks baru */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 2s infinite;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.85);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Tombol Sambutan */
+.greeting-button {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 12px 40px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #12c2e9, #c471ed, #f64f59);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+    animation: floatingButton 3s infinite ease-in-out; /* Tombol animasi floating */
+    transition: all 0.4s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.greeting-button:hover {
+    transform: translateY(-10px) scale(1.1);
+    background: linear-gradient(90deg, #f64f59, #c471ed, #12c2e9); /* Warna hover */
+    box-shadow: 0px 10px 20px rgba(240, 46, 170, 0.5);
+}
+
+/* Keyframes untuk floating tombol */
+@keyframes floatingButton {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Animasi bentuk melayang */
+.floating {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(240, 240, 255, 0.2); /* Warna lebih lembut */
+    animation: float 6s infinite ease-in-out;
+    filter: blur(40px);
+}
+
+.floating-1 {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: 25%;
+    animation-duration: 7s;
+}
+
+.floating-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    right: 20%;
+    animation-duration: 8s;
+}
+
+.floating-3 {
+    width: 300px;
+    height: 300px;
+    top: 45%;
+    right: 10%;
+    animation-duration: 9s;
+}
+
+/* Keyframes untuk animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 5px #66fcf1, 0 0 15px #45a29e, 0 0 20px #1f2833; }
+    50% { text-shadow: 0 0 10px #66fcf1, 0 0 25px #45a29e, 0 0 35px #1f2833; }
+}
+
+/* Navbar */
+.navbar-brand {
+    color: #fff !important; /* Teks Navbar menjadi putih untuk kontras */
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Gradasi baru */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Mengubah warna teks "Kategori" menjadi biru */
+.sb-sidenav-menu-heading {
+    color: #fff !important; /* Teks putih */
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Gradasi baru */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Sidebar */
+.sb-sidenav .nav-link:hover {
+    color: #66fcf1;
+    text-shadow: 0px 0px 8px rgba(102, 252, 241, 0.8);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.sb-sidenav-menu-heading:hover {
+    text-shadow: 0px 0px 12px rgba(102, 252, 241, 0.8);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Mengubah warna teks navbar menjadi biru tua */
+.sb-sidenav .nav-link {
+    color: #fff !important; /* Teks putih */
+    background: linear-gradient(135deg, #0f2027, #203a43); /* Gradasi lebih gelap */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.sb-topnav {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradasi latar belakang */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan untuk efek 3D */
+    border-bottom: 2px solid #1a1a1a; /* Opsional: garis bawah untuk memisahkan dengan konten */
+}
+
+/* Navbar */
+.sb-topnav {
+    background: rgba(15, 32, 39, 0.8); /* Transparan dengan efek kaca */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sb-topnav .nav-link:hover {
+    color: #66fcf1; /* Hover biru neon */
+    text-shadow: 0px 0px 8px rgba(102, 252, 241, 0.7);
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,281 @@
+<!-- Home Section -->
+<section id="home">
+    <div class="container">
+        @foreach ($home as $home)
+        <div class="image-container">
+            <!-- Menampilkan gambar -->
+            @if ($home->image)
+                <img src="{{ asset('storage/' . $home->image) }}" alt="Home Image" class="home-img">
+            @else
+                <img src="{{ asset('assets-landing-pages/assets/profile5.png') }}" alt="Default Image" class="home-img">
+            @endif
+        </div>
+
+        <!-- Salam dan Profil -->
+        <p class="saya-ican-text">{{ $home->title }}</p>      
+        <div class="typing-text">{{ $home->description }}</div> 
+        <button class="cta-button">Lihat Proyek Saya</button>
+        @endforeach
+    </div>
+</section>
+
+
+
+welcome to MyCans Portfolio
+I'm Frond end developers
+
+Lihat Proyek Saya
+
+<h2 class="text-4xl font-extrabold mb-6">About Me</h2>
+<p class="text-lg mb-12 max-w-3xl mx-auto">Halo! Saya Ican, seorang Web Developer yang bersemangat menciptakan pengalaman digital inovatif dan user-friendly.</p>
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-500 text-white">
+    <div class="container mx-auto text-center">
+        <!-- Heading -->
+        <h2 class="text-4xl font-extrabold mb-6">About Me</h2>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            @foreach($about as $about)
+                <div class="space-y-6 mb-12">
+                    <!-- Title -->
+                    <h3 class="text-3xl font-bold mb-4">{{ $about->title }}</h3>
+                    <!-- Description -->
+                    <p class="text-lg mb-12">{{ $about->description }}</p>
+
+                    
+
+                    <!-- Gambar Profil -->
+                    <div class="relative group mx-auto w-80 h-80">
+                        <!-- Bingkai Gradien -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 transition-transform duration-500 group-hover:scale-105">
+                            <!-- Container Gambar -->
+                            <div class="w-full h-full bg-white rounded-full p-1">
+                                <!-- Gambar -->
+                                <img src=
+                                     alt="Profile Picture" 
+                                     class="w-full h-full object-cover rounded-full shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Keahlian -->
+    <div class="text-left space-y-6">
+        <h3 class="text-3xl font-bold mb-4">Keahlian Saya</h3>
+        <ul class="mt-4 text-lg space-y-4">
+            <li class="flex items-center space-x-4">
+                <span class="bg-yellow-400 p-3 rounded-full">
+                    <i class="fas fa-code text-2xl text-white"></i>
+                </span>
+                <span>HTML5, CSS3, JavaScript</span>
+            </li>
+            <li class="flex items-center space-x-4">
+                <span class="bg-yellow-400 p-3 rounded-full">
+                    <i class="fas fa-database text-2xl text-white"></i>
+                </span>
+                <span>Laravel, PHP</span>
+            </li>
+            <li class="flex items-center space-x-4">
+                <span class="bg-yellow-400 p-3 rounded-full">
+                    <i class="fas fa-server text-2xl text-white"></i>
+                </span>
+                <span>Database (MySQL, MongoDB)</span>
+            </li>
+            <li class="flex items-center space-x-4">
+                <span class="bg-yellow-400 p-3 rounded-full">
+                    <i class="fas fa-paint-brush text-2xl text-white"></i>
+                </span>
+                <span>UI/UX Design</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-r from-orange-400 to-red-500 shadow-lg rounded-lg p-6 text-center transform hover:scale-105 hover:shadow-xl transition duration-300">
+        <div class="text-6xl mb-4"><i class="fab fa-html5"></i></div>
+        <h3 class="text-2xl font-semibold mb-2">HTML</h3>
+        <p class="text-lg">Mahir dalam membangun struktur web dengan standar modern.</p>
+    </div>
+    <!-- Skill Card CSS -->
+    <div class="bg-gradient-to-r from-blue-400 to-indigo-500 shadow-lg rounded-lg p-6 text-center transform hover:scale-105 hover:shadow-xl transition duration-300">
+        <div class="text-6xl mb-4"><i class="fab fa-css3-alt"></i></div>
+        <h3 class="text-2xl font-semibold mb-2"></h3>
+        <p class="text-lg">Ahli dalam mendesain tampilan yang responsif dan menarik.</p>
+    </div>
+    <!-- Skill Card JavaScript -->
+    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 shadow-lg rounded-lg p-6 text-center transform hover:scale-105 hover:shadow-xl transition duration-300">
+        <div class="text-6xl mb-4"><i class="fab fa-js"></i></div>
+        <h3 class="text-2xl font-semibold mb-2">JavaScript</h3>
+        <p class="text-lg">Menguasai interaktivitas dan animasi untuk pengalaman pengguna.</p>
+    </div>
+    <!-- Skill Card Laravel -->
+    <div class="bg-gradient-to-r from-red-400 to-yellow-500 shadow-lg rounded-lg p-6 text-center transform hover:scale-105 hover:shadow-xl transition duration-300">
+        <div class="text-6xl mb-4"><i class="fab fa-laravel"></i></div>
+        <h3 class="text-2xl font-semibold mb-2">Laravel</h3>
+        <p class="text-lg">Mahir dalam membangun aplikasi web dinamis dengan framework Laravel.</p>
+
+
+
+           <!-- Tombol Kirim -->
+           <div class="flex justify-center">
+            <button type="button" id="submitBtn" 
+                class="w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-pink-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gradient-to-l from-pink-600 to-yellow-400 focus:outline-none focus:ring-4 focus:ring-teal-500 transition-all duration-300 transform hover:scale-105">
+                Kirim Pesan
+            </button>
+        </div>
+    </form>
+</div>
+
+
+        <!-- Tombol Kirim -->
+        <div class="text-center">
+            <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-pink-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gradient-to-l from-pink-600 to-yellow-400 focus:outline-none focus:ring-4 focus:ring-teal-500 transition-all duration-300 transform hover:scale-105">
+                Kirim Pesan
+            </button>
+        </div>
+    </form>
+
+
+
+
+
+    <!-- Section Contact -->
+<section id="contact" class="py-16 bg-gradient-to-r from-teal-500 via-blue-600 to-purple-700">
+    <div class="container mx-auto px-6 text-center text-white space-y-12">
+        
+        <!-- Header -->
+        <div class="space-y-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold">Contact Me</h2>
+            <p class="text-lg sm:text-xl max-w-3xl mx-auto text-gray-300">
+                Saya siap membantu Anda! Silakan isi formulir di bawah ini atau hubungi saya melalui informasi kontak.
+            </p>
+        </div>
+
+        <!-- Formulir Kontak -->
+        <form action="{{ route('admin.contact.store') }}" method="POST" class="bg-gradient-to-r from-purple-600 via-indigo-500 to-teal-400 p-6 sm:p-8 lg:p-10 rounded-xl shadow-lg max-w-3xl mx-auto space-y-6">
+            @csrf
+
+            <h2 class="text-2xl sm:text-3xl font-semibold text-white text-center mb-8">Hubungi Kami</h2>
+
+            <!-- Input Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label for="name" class="text-gray-100 font-bold text-sm mb-2">Nama Anda</label>
+                    <input type="text" name="name" id="name" placeholder="Nama Anda" required 
+                        class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="email" class="text-gray-100 font-bold text-sm mb-2">Email Anda</label>
+                    <input type="email" name="email" id="email" placeholder="Email Anda" required
+                        class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="message" class="text-gray-100 font-bold text-sm mb-2">Pesan Anda</label>
+                <textarea name="message" id="message" rows="5" placeholder="Pesan Anda" required
+                    class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50"></textarea>
+            </div>
+
+            <!-- Input Grid Sosial Media dan Telepon -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label for="phone" class="text-gray-100 font-bold text-sm mb-2">Nomor Telepon Anda</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Nomor Telepon Anda" required
+                        class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+                </div>
+
+                <!-- Input JSON -->
+                <div class="flex flex-col">
+                    <label for="instagramJson" class="text-gray-100 font-bold text-sm mb-2">Masukkan JSON</label>
+                    <input type="text" id="instagramJson" name="social_media[instagram]" 
+                        placeholder='{"instagram":"https:\\www.instagram.com\\sperrow_knight"}'
+                        class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+                </div>
+            </div>
+
+            <!-- Contoh Format JSON -->
+            <div class="flex flex-col bg-white p-6 rounded-lg shadow-lg space-y-4">
+                <label class="text-gray-800 font-semibold text-lg">Contoh Format JSON</label>
+                <div class="flex items-center bg-gray-100 p-4 rounded-lg border border-gray-300">
+                    <code id="exampleJson" class="text-sm font-mono text-gray-700 flex-1">
+                        {"instagram":"https:\\www.instagram.com\\sperrow_knight"}
+                    </code>
+                    <button type="button" onclick="copyExample()" 
+                        class="ml-4 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg shadow-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 transition duration-300">
+                        Salin
+                    </button>
+                </div>
+                <textarea id="hiddenJson" class="hidden">{"instagram":"https:\\www.instagram.com\\sperrow_knight"}</textarea>
+            </div>
+
+            <!-- Tombol Kirim -->
+            <div class="text-center">
+            <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-pink-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gradient-to-l from-pink-600 to-yellow-400 focus:outline-none focus:ring-4 focus:ring-teal-500 transition-all duration-300 transform hover:scale-105">
+                Kirim Pesan
+            </button>
+        </div>
+    </form>
+
+
+    <span class="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-neonBlue via-neonPurple to-neonPink">
+        MyCans
+        <!-- Underline Animation -->
+        <span class="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 transition-all duration-500 group-hover:w-full"></span>
+</span>
+</a>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    // Fungsi untuk menyalin contoh JSON ke clipboard
+    function copyExample() {
+        const hiddenJson = document.getElementById("hiddenJson");
+        hiddenJson.style.display = "block"; // Tampilkan sementara
+        hiddenJson.select();
+        hiddenJson.setSelectionRange(0, 99999); // Untuk mendukung perangkat lama
+        document.execCommand("copy"); // Menyalin teks
+        hiddenJson.style.display = "none"; // Sembunyikan lagi
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Contoh Disalin!',
+            text: 'Format JSON berhasil disalin ke clipboard.',
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+
+    // Fungsi untuk menampilkan alert ketika form dikirim
+    function submitExample() {
+        const inputJson = document.getElementById("instagramJson").value;
+
+        if (inputJson.trim() === '') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Input Kosong!',
+                text: 'Harap masukkan format JSON sebelum mengirim.',
+                showConfirmButton: true
+            });
+        } else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Data Terkirim!',
+                text: 'Format JSON Anda: ' + inputJson,
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+    }
+</script>
+

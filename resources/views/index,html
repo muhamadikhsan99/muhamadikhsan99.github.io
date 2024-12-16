@@ -1,0 +1,28 @@
+  <!-- Certificate Section -->
+<section id="certificate" class="bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-700 py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-white mb-12">Certificate Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <!-- Certificate Card 1 -->
+            <div class="certificate-card bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 p-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <img src="{{ asset('assets-landing-pages/assets/css.png') }}" alt="Sertifikat 1" class="w-full h-36 object-cover rounded-lg shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-xl font-semibold mt-4 text-white">Sertifikat Web Development</h3>
+                <p class="text-sm text-gray-100">Diberikan pada: Januari 2024</p>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="certificate-card bg-gradient-to-r from-teal-500 via-blue-600 to-green-500 p-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <img src="path/to/certificate2.jpg" alt="Sertifikat 2" class="w-full h-36 object-cover rounded-lg shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-xl font-semibold mt-4 text-white">Sertifikat Laravel Mastery</h3>
+                <p class="text-sm text-gray-100">Diberikan pada: Maret 2024</p>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="certificate-card bg-gradient-to-r from-pink-500 via-red-600 to-yellow-500 p-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <img src="path/to/certificate3.jpg" alt="Sertifikat 3" class="w-full h-36 object-cover rounded-lg shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-xl font-semibold mt-4 text-white">Sertifikat UI/UX Design</h3>
+                <p class="text-sm text-gray-100">Diberikan pada: Juli 2024</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,38 @@
+ <!-- Section Projects -->
+<section id="projects" class="py-16 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-700">
+    <div class="container mx-auto text-center text-white">
+        <h2 class="text-4xl font-extrabold mb-12">Project Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card bg-gradient-to-r from-teal-500 via-green-500 to-blue-600 p-6 rounded-xl shadow-2xl transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+                <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4 shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-2xl font-semibold mt-4">Project One</h3>
+                <p class="text-sm text-gray-200">A brief description of Project One goes here. A project that solves a problem.</p>
+                <a href="#" class="text-white hover:text-yellow-300 mt-4 block">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-6 rounded-xl shadow-2xl transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+                <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4 shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-2xl font-semibold mt-4">Project Two</h3>
+                <p class="text-sm text-gray-200">Description of Project Two. Another exciting project that showcases my skills.</p>
+                <a href="#" class="text-white hover:text-yellow-300 mt-4 block">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 p-6 rounded-xl shadow-2xl transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+                <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4 shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-2xl font-semibold mt-4">Project Three</h3>
+                <p class="text-sm text-gray-200">This is Project Three. A creative project that involved innovative solutions.</p>
+                <a href="#" class="text-white hover:text-yellow-300 mt-4 block">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+'internal' => 'from-indigo-500 via-purple-600 to-pink-600',  // Jenis Internal
+'external' => 'from-teal-500 via-blue-600 to-green-500',    // Jenis External
+'research' => 'from-pink-500 via-red-600 to-yellow-500',     // Jenis Research
+'development' => 'from-gray-500 via-gray-600 to-gray-700',   // Jenis Development
+default => 'from-gray-500 via-gray-600 to-gray-700',         // Jenis lainnya

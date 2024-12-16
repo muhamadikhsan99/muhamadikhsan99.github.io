@@ -1,0 +1,58 @@
+<x-layout>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="{{ asset('asset-landing-page/js/webfont.min.js') }}" >
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <header id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Exploring creativity and technology</p>
+        </header>
+    
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I am a passionate developer with experience in building innovative solutions. My focus is on creating efficient, scalable, and user-friendly applications that bring real value.</p>
+            <p>With skills in front-end and back-end development, I strive to continuously learn and improve in the ever-evolving tech world.</p>
+        </section>
+    
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Project 1: Web Application</h3>
+                <p>A web app designed to streamline business operations using modern web technologies.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2: Mobile App</h3>
+                <p>An intuitive mobile app built to enhance user experience and engagement.</p>
+            </div>
+        </section>
+    
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you'd like to work together or just say hello, feel free to reach out!</p>
+            <button id="contactButton">Get in Touch</button>
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </footer>
+    
+        <script src="{{ asset('asset-landing-page/js/script.js') }}"></script>
+    </body>
+    </html>
+    
+    
+    </x-layout>

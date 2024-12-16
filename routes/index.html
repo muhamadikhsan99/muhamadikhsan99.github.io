@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+    <title>Portofolio - Ican</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0-alpha.4/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  
+
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+<!-- Navbar -->
+<nav class="bg-gradient-to-r from-blue-700 via-purple-700 to-blue-700 text-white shadow-xl">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-6">
+        <!-- Logo -->
+        <a href="#" class="text-5xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:opacity-100 hover:scale-110 transition-all duration-300 flex items-center space-x-2">
+            <!-- Icon -->
+            <span class="inline-block w-10 h-10 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 rounded-full shadow-2xl flex items-center justify-center">
+                <i class="fas fa-cube text-white text-2xl"></i>
+            </span>
+            <!-- Text -->
+            <span class="font-serif font-bold text-2xl">MyCans</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button class="text-white text-3xl md:hidden focus:outline-none" id="menu-button">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Links (Hidden by default on mobile, shown on medium screens and up) -->
+        <ul id="nav-links" class="hidden w-full md:flex md:w-auto md:space-x-8 text-center">
+            <li><a href="#home" class="hover:text-yellow-300 flex items-center group">
+                <i class="fas fa-home mr-2 text-blue-500 group-hover:text-blue-400 transition-colors duration-300 text-2xl group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_10px_#00f,0_0_20px_#00f,0_0_30px_#00f] transform transition-all duration-500 ease-in-out"></i>Home</a>
+            </li>
+            <li><a href="#about" class="hover:text-yellow-300 flex items-center group">
+                <i class="fas fa-user mr-2 text-green-500 group-hover:text-green-400 transition-colors duration-300 text-2xl group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_10px_#00f,0_0_20px_#00f,0_0_30px_#00f] transform transition-all duration-500 ease-in-out"></i>About</a>
+            </li>
+            <li><a href="#certificate" class="hover:text-yellow-300 flex items-center group">
+                <i class="fas fa-award mr-2 text-yellow-500 group-hover:text-yellow-400 transition-colors duration-300 text-2xl group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_10px_#00f,0_0_20px_#00f,0_0_30px_#00f] transform transition-all duration-500 ease-in-out"></i>Certificate</a>
+            </li>
+            <li><a href="#projects" class="hover:text-yellow-300 flex items-center group">
+                <i class="fas fa-briefcase mr-2 text-purple-500 group-hover:text-purple-400 transition-colors duration-300 text-2xl group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_10px_#00f,0_0_20px_#00f,0_0_30px_#00f] transform transition-all duration-500 ease-in-out"></i>Project</a>
+            </li>
+            <li><a href="#skills" class="hover:text-yellow-300 flex items-center group">
+                <i class="fas fa-lightbulb mr-2 text-orange-500 group-hover:text-orange-400 transition-colors duration-300 text-2xl group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_10px_#00f,0_0_20px_#00f,0_0_30px_#00f] transform transition-all duration-500 ease-in-out"></i>Skill</a>
+            </li>
+            <li><a href="#contact" class="hover:text-yellow-300 flex items-center group">
+                <i class="fas fa-envelope mr-2 text-red-500 group-hover:text-red-400 transition-colors duration-300 text-2xl group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_10px_#00f,0_0_20px_#00f,0_0_30px_#00f] transform transition-all duration-500 ease-in-out"></i>Contact</a>
+            </li>
+        </ul>
+
+       <!-- Login Button -->
+@if (Auth::check())
+    <!-- Jika pengguna sudah login, tampilkan tombol Logout -->
+    <form action="{{ route('logout') }}" method="POST" class="inline-block">
+        @csrf
+        <button type="submit" class="bg-red-500 py-2 px-6 rounded-full text-lg hover:bg-red-400 transition-all">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </form>
+@else
+    <!-- Jika pengguna belum login, tampilkan tombol Login -->
+    <a href="#login" class="hidden md:inline-block bg-yellow-500 py-2 px-6 rounded-full text-lg hover:bg-yellow-400 transition-all">
+        <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+@endif
+
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden bg-gradient-to-r from-blue-600 via-indigo-500 to-teal-500 md:hidden">
+    <ul class="flex flex-col space-y-4 py-4 text-center">
+        <li><a href="#home" class="hover:text-yellow-300 flex items-center justify-center">
+            <i class="fas fa-home mr-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"></i>Home</a>
+        </li>
+        <li><a href="#about" class="hover:text-yellow-300 flex items-center justify-center">
+            <i class="fas fa-user mr-2 text-green-400 hover:text-green-300 transition-colors duration-300"></i>About</a>
+        </li>
+        <li><a href="#certificate" class="hover:text-yellow-300 flex items-center justify-center">
+            <i class="fas fa-award mr-2 text-yellow-400 hover:text-yellow-300 transition-colors duration-300"></i>Certificate</a>
+        </li>
+        <li><a href="#projects" class="hover:text-yellow-300 flex items-center justify-center">
+            <i class="fas fa-briefcase mr-2 text-purple-400 hover:text-purple-300 transition-colors duration-300"></i>Project</a>
+        </li>
+        <li><a href="#skills" class="hover:text-yellow-300 flex items-center justify-center">
+            <i class="fas fa-lightbulb mr-2 text-orange-400 hover:text-orange-300 transition-colors duration-300"></i>Skill</a>
+        </li>
+        <li><a href="#contact" class="hover:text-yellow-300 flex items-center justify-center">
+            <i class="fas fa-envelope mr-2 text-red-400 hover:text-red-300 transition-colors duration-300"></i>Contact</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    // Toggle Mobile Menu
+    const menuButton = document.getElementById('menu-button');
+    const navLinks = document.getElementById('nav-links');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+
+
+<!-- Home Section -->
+<section id="home" class="relative h-screen bg-gradient-to-r from-blue-200 via-lavender-300 to-teal-200">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 via-blue-500 to-teal-500 animate-bg-gradient"></div>
+    <div class="container mx-auto text-center text-gray-100 relative z-10 flex flex-col justify-center items-center h-full px-6">
+        @foreach ($home as $home)
+        <div class="image-container mb-6">
+    @if ($home->image)
+    <div class="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 mx-auto">
+        <!-- Outer Neon Gradient Border -->
+        <div class="absolute inset-0 bg-gradient-to-b from-teal-600 via-blue-500 to-teal-600 rounded-full opacity-90"></div>
+
+        <!-- Inner Image with Neon Border, Glow Effect, and Cool Hover Animation -->
+        <img src="{{ asset('storage/' . $home->image) }}" 
+             alt="Home Image" 
+             class="relative w-full h-full rounded-full border-4 border-transparent bg-gradient-to-b from-teal-600 via-blue-500 to-teal-600 p-2 shadow-lg transition-transform duration-500 ease-in-out 
+                  hover:scale-110 hover:rotate-6 hover:shadow-[0_0_15px_#1e7d66,0_0_30px_#56c1b7,0_0_45px_#9fd8e2] 
+                  hover:border-transparent hover:outline-2 hover:outline-[#1e7d66] active:scale-95 active:shadow-2xl">
+    </div>
+    @else
+        <span class="block text-lg text-gray-300 italic">No Image</span>
+    @endif
+</div>
+
+
+        <div class="text-center">
+            <!-- Neon Gradient Heading -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-indigo-600 to-pink-600 animate-blink"
+                style="text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7), 1px 1px 0 rgba(255, 255, 255, 0.6);">
+                {{ $home->title }}
+            </h1>
+        </div>
+
+        <!-- Deskripsi dengan bayangan teks untuk meningkatkan kontras -->
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 max-w-md sm:max-w-lg lg:max-w-2xl mx-auto text-white font-extrabold tracking-tight 
+               shadow-lg text-shadow-lg"
+            style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+            {{ $home->description }}
+        </p>
+
+        <!-- Button with Interactive Hover Effect -->
+        <a href="#projects"  
+           class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg font-semibold hover:scale-110 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-700 transition-transform duration-300 shadow-lg">
+            Lihat Proyek Saya
+        </a>
+    </div>
+    @endforeach
+</section>
+
+<!-- Social Media Links -->
+<section class="flex flex-wrap justify-center gap-6 py-6 bg-gradient-to-r from-blue-500 via-lavender-500 to-teal-500">
+    <!-- Social Media Links Container -->
+    <div class="flex flex-wrap justify-center gap-8 mt-6">
+        <!-- Twitter -->
+        <div class="text-center">
+            <a href="https://twitter.com" target="_blank" class="text-4xl sm:text-5xl md:text-6xl text-blue-700 hover:text-blue-500 transition-transform transform hover:scale-110 duration-300">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <p class="text-xs sm:text-sm text-white mt-2">Twitter</p>
+        </div>
+        <!-- Facebook -->
+        <div class="text-center">
+            <a href="https://facebook.com" target="_blank" class="text-4xl sm:text-5xl md:text-6xl text-blue-800 hover:text-blue-600 transition-transform transform hover:scale-110 duration-300">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <p class="text-xs sm:text-sm text-white mt-2">Facebook</p>
+        </div>
+        <!-- Instagram -->
+        <div class="text-center">
+            <a href="https://instagram.com" target="_blank" class="text-4xl sm:text-5xl md:text-6xl text-pink-700 hover:text-pink-500 transition-transform transform hover:scale-110 duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <p class="text-xs sm:text-sm text-white mt-2">Instagram</p>
+        </div>
+        <!-- GitHub -->
+        <div class="text-center">
+            <a href="https://github.com" target="_blank" class="text-4xl sm:text-5xl md:text-6xl text-gray-800 hover:text-gray-500 transition-transform transform hover:scale-110 duration-300">
+                <i class="fab fa-github"></i>
+            </a>
+            <p class="text-xs sm:text-sm text-white mt-2">GitHub</p>
+        </div>
+        <!-- YouTube -->
+        <div class="text-center">
+            <a href="https://youtube.com" target="_blank" class="text-4xl sm:text-5xl md:text-6xl text-red-700 hover:text-red-500 transition-transform transform hover:scale-110 duration-300">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <p class="text-xs sm:text-sm text-white mt-2">YouTube</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <!-- About Section -->
+<section id="about" class="py-16 bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-500 text-white">
+    <div class="container mx-auto text-center">
+        <!-- Heading -->
+        @foreach($about as $about)
+        <h2 class="text-4xl font-extrabold mb-6">{{ $about->title }}</h2>
+        <p class="text-lg mb-12 max-w-3xl mx-auto">{{ $about->description }}</p>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Keahlian -->
+            <div class="text-left space-y-6">
+                <h3 class="text-3xl font-bold mb-4">Keahlian Saya</h3>
+                <ul class="mt-4 text-lg space-y-4">
+                    <li class="flex items-center space-x-4">
+                        <span class="bg-yellow-400 p-3 rounded-full">
+                            <i class="fas fa-code text-2xl text-white"></i>
+                        </span>
+                        <span>HTML5, CSS3, JavaScript</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <span class="bg-yellow-400 p-3 rounded-full">
+                            <i class="fas fa-database text-2xl text-white"></i>
+                        </span>
+                        <span>Laravel, PHP</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <span class="bg-yellow-400 p-3 rounded-full">
+                            <i class="fas fa-server text-2xl text-white"></i>
+                        </span>
+                        <span>Database (MySQL, MongoDB)</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <span class="bg-yellow-400 p-3 rounded-full">
+                            <i class="fas fa-paint-brush text-2xl text-white"></i>
+                        </span>
+                        <span>UI/UX Design</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Gambar Profil -->
+        <!-- Gambar Profil -->
+<div class="relative group mx-auto w-80 h-80">
+    <!-- Bingkai Gradien -->
+    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 transition-transform duration-500 group-hover:scale-105">
+        <!-- Container Gambar -->
+        <div class="w-full h-full bg-white rounded-full p-1">
+            <!-- Gambar -->
+               <img src="{{ asset('storage/' . $about->image) }}"
+                 alt="Profile Picture" 
+                 class="w-full h-full object-cover rounded-full shadow-lg">
+        </div>
+        @endforeach
+    </div>
+    <!-- Nama dan Profesi di Overlay -->
+    <div class="absolute inset-0 rounded-full bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-white">
+        <h3 class="text-2xl font-bold">Ican</h3>
+        <p class="text-sm mt-2">Frond-End Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Certificate Section -->
+<section id="certificate" class="bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-700 py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-white mb-12">Certificate Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <!-- Certificate Card 1 -->
+            <div class="certificate-card bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 p-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <img src="{{ asset('assets-landing-pages/assets/css.png') }}" alt="Sertifikat 1" class="w-full h-36 object-cover rounded-lg shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-xl font-semibold mt-4 text-white">Sertifikat Web Development</h3>
+                <p class="text-sm text-gray-100">Diberikan pada: Januari 2024</p>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="certificate-card bg-gradient-to-r from-teal-500 via-blue-600 to-green-500 p-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <img src="path/to/certificate2.jpg" alt="Sertifikat 2" class="w-full h-36 object-cover rounded-lg shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-xl font-semibold mt-4 text-white">Sertifikat Laravel Mastery</h3>
+                <p class="text-sm text-gray-100">Diberikan pada: Maret 2024</p>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="certificate-card bg-gradient-to-r from-pink-500 via-red-600 to-yellow-500 p-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <img src="path/to/certificate3.jpg" alt="Sertifikat 3" class="w-full h-36 object-cover rounded-lg shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-xl font-semibold mt-4 text-white">Sertifikat UI/UX Design</h3>
+                <p class="text-sm text-gray-100">Diberikan pada: Juli 2024</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ <!-- Section Projects -->
+<section id="projects" class="py-16 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-700">
+    <div class="container mx-auto text-center text-white">
+        <h2 class="text-4xl font-extrabold mb-12">Project Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card bg-gradient-to-r from-teal-500 via-green-500 to-blue-600 p-6 rounded-xl shadow-2xl transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+                <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4 shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-2xl font-semibold mt-4">Project One</h3>
+                <p class="text-sm text-gray-200">A brief description of Project One goes here. A project that solves a problem.</p>
+                <a href="#" class="text-white hover:text-yellow-300 mt-4 block">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-6 rounded-xl shadow-2xl transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+                <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4 shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-2xl font-semibold mt-4">Project Two</h3>
+                <p class="text-sm text-gray-200">Description of Project Two. Another exciting project that showcases my skills.</p>
+                <a href="#" class="text-white hover:text-yellow-300 mt-4 block">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 p-6 rounded-xl shadow-2xl transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+                <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4 shadow-md transition-transform duration-500 ease-in-out hover:scale-110">
+                <h3 class="text-2xl font-semibold mt-4">Project Three</h3>
+                <p class="text-sm text-gray-200">This is Project Three. A creative project that involved innovative solutions.</p>
+                <a href="#" class="text-white hover:text-yellow-300 mt-4 block">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Section Skills -->
+ <section id="skill" class="py-16 bg-gradient-to-r from-purple-600 via-indigo-700 to-blue-800 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-700 opacity-40 z-0"></div>
+    <div class="container mx-auto px-4 text-white z-10 relative">
+        <h2 class="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Skills Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            @foreach ($skill as $skill)
+                <div class="bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-500 shadow-2xl rounded-xl p-6 text-center transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out relative overflow-hidden group">
+                    <!-- Gambar Skill atau Ikon -->
+                    @if ($skill->image)
+                        <img src="{{ $skill->image_url }}" alt="{{ $skill->title }}" class="w-24 h-24 mb-4 mx-auto rounded-full transition-transform duration-300 ease-in-out group-hover:scale-110">
+                    @else
+                        <!-- Jika tidak ada gambar, tampilkan ikon skill yang berbeda -->
+                        @switch($skill->title)
+                            @case('HTML')
+                                <div class="text-6xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"><i class="fab fa-html5"></i></div>
+                                @break
+                            @case('CSS')
+                                <div class="text-6xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"><i class="fab fa-css3-alt"></i></div>
+                                @break
+                            @case('JavaScript')
+                                <div class="text-6xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"><i class="fab fa-js"></i></div>
+                                @break
+                            @case('Laravel')
+                                <div class="text-6xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"><i class="fab fa-laravel"></i></div>
+                                @break
+                            @default
+                                <div class="text-6xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"><i class="fas fa-cogs"></i></div>
+                        @endswitch
+                    @endif
+                    
+                    <h3 class="text-3xl font-semibold mb-2 transition-transform duration-300 ease-in-out group-hover:text-yellow-400">{{ $skill->title }}</h3>
+                    <p class="text-lg mb-4">{{ $skill->description }}</p>
+                    
+                    <!-- Hover Effect: Animated Border -->
+                    <div class="absolute inset-0 border-4 border-transparent rounded-xl group-hover:border-yellow-400 transition-all duration-300"></div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+
+<!-- Section Contact -->
+<section id="contact" class="py-16 bg-gradient-to-r from-teal-500 via-blue-600 to-purple-700">
+<div class="container mx-auto px-6 text-center text-white">
+    <h2 class="text-4xl font-semibold text-center mb-6 text-gray-900">Contact Me</h2>
+    <p class="text-lg text-center mt-4 mb-8 max-w-2xl mx-auto text-gray-700">Saya siap membantu Anda! Silakan isi formulir di bawah ini atau hubungi saya melalui informasi kontak.</p>
+
+    <!-- Formulir Kontak -->
+    <form action="{{ route('admin.contact.store') }}" method="POST" class="contact-form bg-gradient-to-r from-purple-600 via-indigo-500 to-teal-400 p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+        @csrf <!-- CSRF token untuk keamanan -->
+        
+        <!-- Nama -->
+        <div class="mb-6">
+            <input type="text" name="name" placeholder="Nama Anda" required class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 ease-in-out bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+        </div>
+        
+        <!-- Email -->
+        <div class="mb-6">
+            <input type="email" name="email" placeholder="Email Anda" required class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 ease-in-out bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+        </div>
+        
+        <!-- Pesan -->
+        <div class="mb-6">
+            <textarea name="message" rows="5" placeholder="Pesan Anda" required class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 ease-in-out bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50"></textarea>
+        </div>
+        
+        <!-- Nomor Telepon -->
+        <div class="mb-6">
+            <input type="tel" name="phone" placeholder="Nomor Telepon Anda" required class="w-full p-4 border-2 border-transparent rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 ease-in-out bg-white placeholder-gray-500 text-gray-900 shadow-md hover:bg-gray-50">
+        </div>
+        
+  <!-- Sosial Media -->
+<!-- Sosial Media -->
+<!-- Sosial Media -->
+<div class="mb-6">
+    <label for="socialmedia" class="block text-teal-800 font-bold text-sm mb-2 flex items-center">
+        <svg class="w-5 h-5 mr-2 text-teal-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11m4 0h2M4 10v10a2 2 0 002 2h3m7-2h4a2 2 0 002-2V10m-5 4H8m0 0H5m3 0v-4m0 4h7" />
+        </svg>
+        Masukkan akun sosial media Anda
+    </label>
+    <input type="text" 
+           id="socialmedia" 
+           name="socialmedia" 
+           placeholder="Contoh: @tes_123" 
+           required 
+           class="w-full p-4 border-2 border-teal-500 rounded-lg focus:outline-none focus:ring-4 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 ease-in-out bg-white placeholder-gray-600 text-gray-900 shadow-md hover:bg-gray-50">
+    <p class="text-sm text-teal-800 font-medium mt-2 bg-teal-50 p-2 rounded-lg border-l-4 border-teal-500">
+        <strong>Contoh:</strong> @instagram: tes_123, @tiktok: tes_456, @twitter: tes_789, @x: tes_101, @facebook: tes_202
+    </p>
+</div>
+
+
+        
+        <!-- Tombol Kirim -->
+        <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 to-pink-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gradient-to-l from-pink-600 to-yellow-400 focus:outline-none focus:ring-4 focus:ring-teal-500 transition-all duration-300 ease-in-out transform hover:scale-105">
+            Kirim Pesan
+        </button>
+    </form>
+</div>
+
+
+        <!-- Contact Information -->
+        <div class="mt-8 space-y-4">
+            <!-- Phone Number -->
+            <p class="flex items-center text-lg text-gray-100 space-x-4">
+                <i class="fas fa-phone-alt text-xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text"></i>
+                <span>+62 812-3456-7890</span>
+            </p>
+
+            <!-- Email Address -->
+            <p class="flex items-center text-lg text-gray-100 space-x-4">
+                <i class="fas fa-envelope text-xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text"></i>
+                <span>email@contoh.com</span>
+            </p>
+
+            
+
+            <!-- Location -->
+            <p class="flex items-center text-lg text-gray-100 space-x-4 mt-4">
+                <i class="fas fa-map-marker-alt text-xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text"></i>
+                <span>Jl.Raya Ciomas ,Alamat No. 85, Bogor, jawa barat</span>
+            </p>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <div class="mt-8">
+            <iframe class="w-full h-64 rounded-lg shadow-2xl"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3691470481804!2d106.76942461101085!3d-6.6009634933653265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5a76cda4bf5%3A0x7621d10be59ae0aa!2sGg.%20A.%20Yasin%2C%20Ciomas%20Rahayu%2C%20Kec.%20Ciomas%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016118!5e0!3m2!1sid!2sid!4v1733051332200!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-indigo-600 via-purple-700 to-pink-700 text-white py-12">
+    <div class="container mx-auto text-center px-6">
+        <h3 class="text-3xl font-bold mb-6 tracking-wide uppercase text-shadow-lg">Terhubung dengan Saya</h3>
+        <!-- Social Media Icons -->
+        <div class="social-icons mb-6 flex justify-center space-x-6 md:space-x-8">
+            
+        
+    <a href="https://facebook.com" target="_blank" class="text-3xl md:text-4xl text-blue-500 transition-all duration-300 hover:text-blue-400 hover:scale-125 hover:translate-y-1">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" class="text-3xl md:text-4xl text-blue-400 transition-all duration-300 hover:text-blue-300 hover:scale-125 hover:translate-y-1">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://github.com" target="_blank" class="text-3xl md:text-4xl text-gray-400 transition-all duration-300 hover:text-gray-300 hover:scale-125 hover:translate-y-1">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://youtube.com" target="_blank" class="text-3xl md:text-4xl text-red-600 transition-all duration-300 hover:text-red-500 hover:scale-125 hover:translate-y-1">
+        <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="text-3xl md:text-4xl text-pink-500 transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:translate-y-1">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+        
+        
+<div class="footer-links mb-6 flex justify-center flex-wrap text-center">
+    <a href="#home" class="mx-4 text-lg flex flex-col items-center text-white hover:text-blue-300 transition duration-300">
+        <i class="fas fa-home text-blue-500 mb-2"></i>
+        <span>Home</span>
+    </a>
+    <a href="#about" class="mx-4 text-lg flex flex-col items-center text-white hover:text-blue-300 transition duration-300">
+        <i class="fas fa-user text-green-500 mb-2"></i>
+        <span>About</span>
+    </a>
+    <a href="#certificate" class="mx-4 text-lg flex flex-col items-center text-white hover:text-blue-300 transition duration-300">
+        <i class="fas fa-award text-yellow-500 mb-2"></i>
+        <span>Certificate</span>
+    </a>
+    <a href="#project" class="mx-4 text-lg flex flex-col items-center text-white hover:text-blue-300 transition duration-300">
+        <i class="fas fa-briefcase text-purple-500 mb-2"></i>
+        <span>Project</span>
+    </a>
+    <a href="#skill" class="mx-4 text-lg flex flex-col items-center text-white hover:text-blue-300 transition duration-300">
+        <i class="fas fa-lightbulb text-orange-500 mb-2"></i>
+        <span>Skill</span>
+    </a>
+    <a href="#contact" class="mx-4 text-lg flex flex-col items-center text-white hover:text-blue-300 transition duration-300">
+        <i class="fas fa-envelope text-red-500 mb-2"></i>
+        <span>Contact</span>
+    </a>
+</div>
+
+
+
+        <p class="text-sm text-gray-200">&copy; 2024 Ican | Semua hak cipta dilindungi</p>
+    </div>
+</footer>
+
+
+
+<!-- Penutupan HTML -->
+</body>
+</html>
+
+
+
+
+
+/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+export default {
+    content: [
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+    ],
+    theme: {
+      extend: { fontFamily: {
+        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+      },
+    },
+    },
+    plugins: [],
+  }
+
+  // tailwind.config.js
+module.exports = {
+  content: [
+    './resources/**/*.{blade.php,js,vue,css}', // Sesuaikan dengan lokasi file kamu
+  ],
+  theme: {
+    extend: {
+      animation: {
+        'fade-in': 'fadeIn 2s ease-out',  // Menambahkan animasi fade-in
+        // Bisa menambahkan animasi lain di sini
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        // Animasi lain bisa didefinisikan di sini
+      },
+    },
+  },
+  plugins: [],
+}
+
+module.exports = {
+  content: ['./resources/**/*.blade.php', './resources/**/*.js', './resources/**/*.vue'],
+  theme: {
+    extend: {
+      animation: {
+        'fade-in': 'fade-in 2s ease-in-out',
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
+
+//Halama Home
+module.exports = {
+  content: ['./resources/**/*.blade.php', './resources/**/*.js', './resources/**/*.vue'], // Sesuaikan dengan proyek Anda
+  theme: {
+    extend: {
+      animation: {
+        blink: 'blink 1.5s infinite', // Efek berkedip
+        float: 'float 3s ease-in-out infinite', // Efek melayang
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+
+// tailwind.config.js
+module.exports = {
+  content: [
+    './resources/**/*.{blade.php,js,vue,css}', // Sesuaikan dengan lokasi file kamu
+  ],
+  theme: {
+    extend: {
+      colors: {
+        neonBlue: '#00FFFF',
+        neonPurple: '#9B4DFF',
+        neonPink: '#FF00FF',
+      },
+      animation: {
+        'gradient-shift': 'gradient-shift 10s ease infinite',
+        'neon-flicker': 'neon-flicker 1.5s infinite alternate',
+      },
+      keyframes: {
+        'gradient-shift': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'neon-flicker': {
+          '0%': { textShadow: '0 0 5px #ff004f, 0 0 10px #ff004f, 0 0 15px #ff004f, 0 0 20px #ff004f' },
+          '50%': { textShadow: '0 0 2px #ff004f, 0 0 5px #ff004f, 0 0 10px #ff004f, 0 0 15px #ff004f' },
+          '100%': { textShadow: '0 0 5px #ff004f, 0 0 10px #ff004f, 0 0 15px #ff004f, 0 0 20px #ff004f' },
+        },
+      },
+      boxShadow: {
+        neon: '0 0 5px #00FFFF, 0 0 10px #9B4DFF, 0 0 15px #FF00FF',
+      },
+    },
+  },
+  plugins: [],
+};
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./resources/**/*.blade.php", // Pastikan file Blade terdeteksi
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+};

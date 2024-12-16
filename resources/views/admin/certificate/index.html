@@ -1,0 +1,137 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <div class="container px-5">
+        <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Start Bootstrap</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item"><a class="nav-link" href="/Home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/About">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Certificate">Certificate</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Project">Project</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Skill">Skill</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Keterampilan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            width: 420px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            overflow: hidden;
+            border-right: 4px solid #333; /* Cursor effect */
+            width: 0;
+            white-space: nowrap;
+            animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                border-color: transparent;
+            }
+            50%, 100% {
+                border-color: #333;
+            }
+        }
+
+        .detail {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .detail strong {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .detail p {
+            margin: 8px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 18px;
+            color: white;
+            background-color: #007bff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-back {
+            display: block;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Certificate Details</h2>
+
+    <div class="detail">
+        <p><strong>Name:</strong> {{ $certificate->name }}</p>
+        <p><strong>Issued By:</strong> {{ $certificate->issued_by }}</p>
+        <p><strong>Issued At:</strong> {{ $certificate->issued_at }}</p>
+        <p><strong>Description:</strong> {{ $certificate->description ?? 'No description provided' }}</p>
+
+        @if($certificate->file)
+            <p><strong>File:</strong> <a href="{{ Storage::url($certificate->file) }}" target="_blank">View PDF</a></p>
+        @else
+            <p><strong>File:</strong> No file uploaded</p>
+        @endif
+    </div>
+
+    <a href="{{ route('certificate.index') }}" class="btn btn-secondary btn-back">Back to Certificates</a>
+</div>
+
+</body>
+</html>

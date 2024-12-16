@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Gradasi ungu di latar belakang */
+    background: linear-gradient(135deg, #800080, #9b59b6);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Animasi gradasi background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container utama */
+.welcome-container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ffe259, #ffa751); /* Tetap dengan gradasi lama */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 2s infinite;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.85);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Menambahkan warna merah pada teks "Siap mengelola dashboard dengan lebih mudah dan modern!" */
+.dashboard-description {
+    color: #ff0000; /* Warna merah */
+}
+#1a3b73);
+/* Gaya tombol sambutan */
+.greeting-button {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* Tetap warna putih untuk teks */
+    padding: 12px 40px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff6347, #4e54c8); /* Gradasi tombol */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.greeting-button:hover {
+    color: #2575fc;
+    background-color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Animasi bentuk melayang */
+.floating {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: float 6s infinite ease-in-out;
+    filter: blur(30px);
+}
+
+.floating-1 {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: 25%;
+    animation-duration: 7s;
+}
+
+.floating-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    right: 20%;
+    animation-duration: 8s;
+}
+
+.floating-3 {
+    width: 300px;
+    height: 300px;
+    top: 45%;
+    right: 10%;
+    animation-duration: 9s;
+}
+
+/* Keyframes untuk animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 5px #ffe259, 0 0 15px #ffa751; }
+    50% { text-shadow: 0 0 10px #ffe259, 0 0 25px #ffa751; }
+}
+
+/* Mengubah warna teks "Dashboard Admin" menjadi biru */
+.navbar-brand {
+    color: #000 !important; /* Biru */
+}
+
+/* Mengubah warna teks "Kategori" menjadi biru */
+.sb-sidenav-menu-heading {
+    color: #000 !important; /* Warna hitam */
+}
+
+/* Mengubah warna teks navbar menjadi hitam */
+.sb-sidenav-menu-heading {
+    color: #000 !important; /* Hitam untuk teks */
+}
+
+/* Jika perlu mengubah warna link lainnya dalam navbar */
+.sb-sidenav .nav-link {
+    color: #000 !important; /* Hitam untuk teks di navbar link */
+}
+
+
